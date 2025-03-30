@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Подарок для тебя!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #screamer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+        }
+        #screamer img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Скоро здесь появится сюрприз...</h1>
+    <p>Нажми на экран или подожди несколько секунд!</p><div id="screamer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/The_Scream.jpg" alt="Screamer">
+    <audio id="scream-sound" src="https://www.myinstants.com/media/sounds/screaming.mp3"></audio>
+</div>
+
+<script>
+    function triggerScreamer() {
+        let screamer = document.getElementById("screamer");
+        let sound = document.getElementById("scream-sound");
+        screamer.style.display = "block";
+        sound.play();
+    }
+    
+    setTimeout(triggerScreamer, 5000);
+    document.body.addEventListener("click", triggerScreamer);
+</script>
+
+</body>
+</html>
